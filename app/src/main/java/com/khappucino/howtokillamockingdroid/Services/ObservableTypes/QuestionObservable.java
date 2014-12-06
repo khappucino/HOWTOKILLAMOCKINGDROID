@@ -7,6 +7,9 @@ import java.util.Observable;
  */
 public class QuestionObservable extends Observable {
 
-
+    public void triggerChange() {
+        setChanged();
+        notifyObservers();
+    }
 
 }
