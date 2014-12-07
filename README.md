@@ -16,7 +16,7 @@ us inject any dependencies before the user really tries to use them. I'm not for
 I'm just keeping it simple so that it is obvious that you are injecting yourself into the Application class.
 What i found interesting was that theoretically every object's constructor could inject itself via the inject method and we
 could just route the object depending on the type. This way for instance, when we inject JSONService into MainActivity, you may
-notice that JSONService has a dependency on an HttpClient. We inject this HttpClient into JSONService when the JSONServie.
+notice that JSONService has a dependency on an HttpClient. We inject this HttpClient into JSONService when the JSONService is created.
 This is more of an experiment but it does look like for simpler projects you can do dependency injection by using
 the Application class as a entry point for the InversionOfControl container. In the unit tests you can see that
 we just create a Mokito fake for the MainApplication class and we set up mokito stubs that handle all the inject calls.
